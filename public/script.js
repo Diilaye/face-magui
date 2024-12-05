@@ -15,9 +15,11 @@ async function loadModels() {
 // Cargar imágenes etiquetadas (usuarios registrados con sus fotos)
 async function loadLabeledImages() {
     try {
+        
         return new Promise( async (resolve, reject) => {
             const descriptions = [];
-            const response = await fetch(`/get-image`);
+            
+            const response = await fetch(`/get-image?image=${window.location.pathname.split('/')[1]}`);
             const blob = await response.blob();
             const img = await faceapi.bufferToImage(blob);
             const detections = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor();
