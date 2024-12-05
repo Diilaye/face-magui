@@ -100,6 +100,8 @@ async function startCamera() {
                         
                         showToast('Information', 'Bienvenu dans le system', 'success');
 
+                        location.replace("https://maguimed.yaatalmbinde.sn/#/accueil");
+
                     }else {
                         showToast('Error', 'User pas enregistrée', 'error');
 
