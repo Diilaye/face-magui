@@ -93,7 +93,7 @@ async function startCamera() {
                     console.log(result.toString());
                     
                     const box = resizedDetections[results.indexOf(result)].detection.box;
-                    const drawBox = new faceapi.draw.DrawBox(box, { label: result.toString().split(' ')[0] === 'label' ? 'Maguette Drame' : 'Inconue', boxColor: result.label === 'unknown' ? 'red' : 'green' });
+                    const drawBox = new faceapi.draw.DrawBox(box, { label: result.toString().split(' ')[0] === 'label' ? window.location.pathname.split('/')[1]=="772488807" ? 'Issa Laye Kane' : 'Maguette Drame' : 'Inconue', boxColor: result.label === 'unknown' ? 'red' : 'green' });
                     drawBox.draw(canvas);
 
                     if (result.label !== 'unknown' && result.distance < 0.6) {
